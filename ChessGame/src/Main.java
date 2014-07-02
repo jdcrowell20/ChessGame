@@ -11,6 +11,8 @@ public class Main {
 	
 	public static void displayGreeting(){
 		System.out.println("Welcome to ChessGame!");
+		
+		System.out.println("Test 1");
 	}
 	
 }
