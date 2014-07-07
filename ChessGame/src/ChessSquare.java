@@ -1,20 +1,24 @@
 
 public class ChessSquare {
-	private int xLoc;
-	private int yLoc;
+	private int sqRow;
+	private int sqCol;
 	private String squareColor;
+	private boolean isEmpty;
+	private ChessPiece squareOccupant;
 	
-	public int getX(){
-		return xLoc;
+	
+	public ChessSquare(int row, int col, String color){
+		this.sqRow = row;
+		this.sqCol = col;
+		this.squareColor = color;
+		this.isEmpty = true;
 	}
-	public int getY(){
-		return yLoc;
+	
+	public int getRow(){
+		return sqRow;
 	}
-	public void setX(int xloc){
-		this.xLoc = xloc;
-	}
-	public void setY(int yloc){
-		this.yLoc = yloc;
+	public int getCol(){
+		return sqCol;
 	}
 	public String getColor(){
 		return squareColor;
@@ -23,4 +27,17 @@ public class ChessSquare {
 		this.squareColor = squarecolor;
 	}
 	
+	public void setPiece(ChessPiece pc){
+		this.squareOccupant = pc;
+		this.squareOccupant.setPosition(this); //update ChessPiece to know it is in this square
+		this.isEmpty = false;
+	}
+	public ChessPiece getPiece(){
+		return this.squareOccupant;
+	}
+	
+	public void markEmpty(){
+		//Use this when a piece leaves its square
+		this.isEmpty = true;
+	}
 }

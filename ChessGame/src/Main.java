@@ -2,17 +2,20 @@
 public class Main {
 
 	public static void main(String[] args){
-		GameBoard board = new GameBoard();
+		Game board = new Game();
 		
-		displayGreeting();
+		//displayGreeting();
 		
 		
 	}
 	
 	public static void displayGreeting(){
 		System.out.println("Welcome to ChessGame!");
-		
-		System.out.println("Test commit");
+	}
+	
+	public static void initGame(){
+		//Initialize board
+		//Initialize Turn Class
 	}
 	
 }
