@@ -32,13 +32,18 @@ public class Game {
 	
 	public Game(){	
 		//drawBoard();
-		initSquares();
-		initPieces();
+		newGame();
 		drawTextBoard();
-		System.out.println("Total number of pieces (B, W): " + blackPieces.size() + ", " + whitePieces.size());
+		//System.out.println("Total number of pieces (B, W): " + blackPieces.size() + ", " + whitePieces.size());
 		
 	}
 	
+	public void newGame(){
+		//reset board to initial position
+		initSquares();
+		initPieces();
+		
+	}
 	public void drawBoard(){
 		gameWindow = new JFrame("Chess Game");
 		//gameWindow.setSize(framesizeX, framesizeY);
@@ -68,7 +73,10 @@ public class Game {
 		//TODO: Displays simple text implementation of chess board
 		for(int i=0; i<8; i++){
 			for(int j=0; j<8; j++){
-				System.out.print(chessboard[i][j].getColor());
+				//System.out.print(chessboard[i][j].getColor());
+				System.out.print("[ ");
+				System.out.print(chessboard[i][j].getTextRepr());
+				System.out.print(" ]");
 			}
 			System.out.println();
 		}

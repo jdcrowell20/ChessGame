@@ -12,9 +12,13 @@ public class Queen extends ChessPiece {
 	@Override
 	public String getPieceTextRepr() {
 		String txtpc = "";
-		txtpc += this.piececolor;
-		txtpc += this.piecetype;
-		
+		if(this.piececolor.equals(PieceColor.Black)){
+			txtpc += "B-";
+		}
+		else{
+			txtpc += "W-";
+		}
+		txtpc += "Queen ";
 		return txtpc;
 	}
 	

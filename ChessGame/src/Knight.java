@@ -1,5 +1,3 @@
-
-
 public class Knight extends ChessPiece {
 	PieceType piecetype;
 	PieceColor piececolor;
@@ -13,9 +11,13 @@ public class Knight extends ChessPiece {
 	@Override
 	public String getPieceTextRepr() {
 		String txtpc = "";
-		txtpc += this.piececolor;
-		txtpc += this.piecetype;
-		
+		if(this.piececolor.equals(PieceColor.Black)){
+			txtpc += "B-";
+		}
+		else{
+			txtpc += "W-";
+		}
+		txtpc += "Knight";
 		return txtpc;
 	}
 

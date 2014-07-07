@@ -19,10 +19,14 @@ public class Rook extends ChessPiece {
 
 	public String getPieceTextRepr() {
 		String txtpc = "";
-		txtpc += this.piececolor;
-		txtpc += this.piecetype;
-		
-		return txtpc;	
+		if(this.piececolor.equals(PieceColor.Black)){
+			txtpc += "B-";
+		}
+		else{
+			txtpc += "W-";
+		}
+		txtpc += "Rook  ";
+		return txtpc;
 	}
 	
 	

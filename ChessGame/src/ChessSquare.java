@@ -4,7 +4,7 @@ public class ChessSquare {
 	private int sqCol;
 	private String squareColor;
 	private boolean isEmpty;
-	private ChessPiece squareOccupant;
+	private ChessPiece squareOccupant = null;
 	
 	
 	public ChessSquare(int row, int col, String color){
@@ -34,6 +34,21 @@ public class ChessSquare {
 	}
 	public ChessPiece getPiece(){
 		return this.squareOccupant;
+	}
+	
+	public String getTextRepr(){
+		//formats output for console  testing of game
+		if(this.squareOccupant == null){
+			if(this.squareColor.equals("W")){
+				return "        ";
+			}
+			else{
+				return "||||||||";
+			}
+		}
+		else{
+			return this.squareOccupant.getPieceTextRepr();
+		}
 	}
 	
 	public void markEmpty(){

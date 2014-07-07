@@ -22,9 +22,13 @@ public class King extends ChessPiece {
 	@Override
 	public String getPieceTextRepr() {
 		String txtpc = "";
-		txtpc += this.piececolor;
-		txtpc += this.piecetype;
-		
+		if(this.piececolor.equals(PieceColor.Black)){
+			txtpc += "B-";
+		}
+		else{
+			txtpc += "W-";
+		}
+		txtpc += "King  ";
 		return txtpc;
 	}
 	

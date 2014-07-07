@@ -9,6 +9,7 @@ public class Pawn extends ChessPiece {
 		this.piecetype = PieceType.Pawn;
 		if(piececolor.equals("black")){ this.piececolor = PieceColor.Black;}
 		else if(piececolor.equals("white")){this.piececolor = PieceColor.White;}
+		
 		this.firstmove = true;
 	}
 	
@@ -19,9 +20,13 @@ public class Pawn extends ChessPiece {
 	@Override
 	public String getPieceTextRepr() {
 		String txtpc = "";
-		txtpc += this.piececolor;
-		txtpc += this.piecetype;
-		
+		if(this.piececolor.equals(PieceColor.Black)){
+			txtpc += "B-";
+		}
+		else{
+			txtpc += "W-";
+		}
+		txtpc += "Pawn  ";
 		return txtpc;
 	}
 	
@@ -49,9 +54,18 @@ public class Pawn extends ChessPiece {
 		 * 	-En passant:  (http://en.wikipedia.org/wiki/En_passant)
 		 */
 		
+		
+		 //srcRow = move.srcRow;
+		 //srcCol = move.srcCol;
+		 //if(board[srcRow][srcCol].getPiece().
+		 //if ChessSquare
+		 //Logic for white (reverse for black):
+		 
 			
 		
 		return false;
 	}
+
+	
 	
 }
